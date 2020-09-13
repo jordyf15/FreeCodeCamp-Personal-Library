@@ -41,20 +41,25 @@ module.exports = function (app) {
     
     .post(function (req, res){//creating an new book
       var title = req.body.title;
-      var newBook = new book({
-        book_title: title
-      })
-      newBook.save()
-      .then((result)=>{
-        res.json({
-          _id: result._id,
-          title: result.book_title,
-          comments: result.comments
-        });
-      })
-      .catch((err)=>{
-        console.error(err);
-      })
+      if(req.body.title){
+        var newBook = new book({
+          book_title: title
+        })
+        newBook.save()
+        .then((result)=>{
+          console.log(result.book_title);
+          res.json({
+            _id: result._id,
+            title: result.book_title,
+            comments: result.comments
+          });
+        })
+        .catch((err)=>{
+          console.error(err);
+        })
+      }else{
+        res.send('missing title')
+      }
       //response will contain new book object including atleast _id and title
     })
     
@@ -78,15 +83,17 @@ module.exports = function (app) {
       .then((result)=>{
         if(!result){
           res.send('no book exists');
-        }
+        }else{
         res.json({
           _id: result._id,
           title: result.book_title,
           comments: result.comments
         });
+      }
       })
       .catch((err)=>{
-        console.error(err);
+        res.send('invalid book id')
+        console.error(err)
       })
       //json res format: {"_id": bookid, "title": book_title, "comments": [comment,comment,...]}
     })
