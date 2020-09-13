@@ -47,7 +47,6 @@ module.exports = function (app) {
         })
         newBook.save()
         .then((result)=>{
-          console.log(result.book_title);
           res.json({
             _id: result._id,
             title: result.book_title,
