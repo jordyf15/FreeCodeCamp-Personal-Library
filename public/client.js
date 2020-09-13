@@ -5,12 +5,12 @@ $( document ).ready(function() {
   $.getJSON('/api/books', function(data) {
     itemsRaw = data;
     $.each(data, function(i, val) {
-      items.push('<li class="bookItem" id="' + i + '">' + val.title + ' - ' + val.commentcount + ' comments</li>');
-      return ( i !== 14 );
+      items.push('<li class="fa fa-book bookItem" id="' + i + '">' + val.title + ' - ' + val.commentcount + ' comments</li><br>');
+      // return ( i !== 14 );
     });
-    if (items.length >= 15) {
-      items.push('<p>...and '+ (data.length - 15)+' more!</p>');
-    }
+    // if (items.length >= 15) {
+    //   items.push('<p>...and '+ (data.length - 15)+' more!</p>');
+    // }
     $('<ul/>', {
       'class': 'listWrapper',
       html: items.join('')

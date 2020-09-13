@@ -1,28 +1,80 @@
 body{
   margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #ffdd59;
 }
-/* .border {
-  border-style: inset;
-  border-width: 1px;
-  margin: 10px;
-}
-
-#sampleui {
-  max-width: 450px;
-  margin-left: 5%;
-  height: 100%;
-}
-
-#sampleposting {
-  max-width: 450px;
+/* border color: #6D4C41 */
+#footer{
   text-align: center;
-  margin-left: 5%;
 }
-
-#userstories {
-  margin-left: 5%;
+.fa{
+  background: transparent;
+  border: none;
 }
-
-form {
-  padding: 5px;
-} */
+#container{
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+#formContainer{
+  text-align: center;
+  background-color: #05c46b;
+  padding: 30px 30px 30px 30px;
+  border: solid;
+  border-width: 15px;
+  border-color: #6D4C41;
+}
+#bookDetail{
+  background-color: #05c46b;
+  border: solid;
+  border-width: 15px;
+  border-color: #6D4C41;
+  padding: 30px 30px 30px 30px;
+  margin-top: 20px;
+}
+#newBookForm{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+button{
+  background-color:#0be881;
+  border-color: #05c46b; 
+}
+#newBook{
+  margin-top: 15px;
+}
+.deleteBook{
+  margin-left: 110px;
+}
+#libraryDisplay{
+  background-color: #05c46b;
+  padding: 0px 70px 0px 30px;
+  border: solid;
+  border-width: 15px;
+  border-color: #6D4C41;
+  overflow-y: scroll;
+  max-height: 468px;
+}
+#libraryTitle{
+  border:solid;
+  border-bottom: none;
+  border-right: none;
+}
+#UIcontainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+li{
+  margin: 3px 0px 3px 0px;
+}
+header{
+  border:solid;
+  border-top: none;
+  padding: 0px 15px 0px 15px;
+}
